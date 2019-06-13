@@ -1,12 +1,44 @@
-﻿// cpp-lab9.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+// cpp-lab9.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 
 #include "pch.h"
 #include <iostream>
+#include <ctime>
+#include <string>
+#include <Windows.H>
+
+using namespace std;
+
 
 int main()
 {
-    std::cout << "Hello World!\n"; 
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+	time_t start, end;
+
+
+	time(&start);
+
+	int theDay;
+	int theMonth;
+	int theYear;
+
+	cout << "День: ";
+	cin >> theDay;
+	cout << endl << "Месяц: ";
+	cin >> theMonth;
+	cout << endl << "Год: ";
+	cin >> theYear;
+
+	cout << "Введённая дата - ";
+	cout << theDay << "." << theMonth << "." << theYear << endl;
+
+
+	time(&end);
+
+	cout << endl << " Программа отработала " << difftime(end, start) << " секунд .";
+
+
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
